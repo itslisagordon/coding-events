@@ -13,7 +13,7 @@ import java.util.List;
 public class EventController {
 
     @GetMapping
-    public String stepSix(Model model) {
+    public String displayAllEvents(Model model) {
         List<String> events = new ArrayList<>();
         events.add("Faye Webster");
         events.add("Metric");
@@ -22,4 +22,11 @@ public class EventController {
         model.addAttribute("events", events);
         return "events/index";
     }
+
+    //lives at /events/create
+    @GetMapping("create")
+    public String renderCreateEventForm() {
+        return "events/create";
+    }
+
 }
